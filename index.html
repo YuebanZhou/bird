@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小鸟游戏</title>
+    <link rel="stylesheet" href="main.css"/>
+</head>
+<body>
+<button id="easy">简单模式</button>
+<button id="hard">困难模式</button>
+<button id="end">结束游戏</button>
+<div>
+    你已经坚持了 <span id="second"></span> 秒！
+</div>
+
+<canvas width="800" height="600"></canvas>
+<script src="js/fb.js"></script>
+<script src="js/sky.js"></script>
+<script src="js/pipe.js"></script>
+<script src="js/land.js"></script>
+<script src="js/bird.js"></script>
+<script src="js/game.js"></script>
+<script>
+
+    var game=new fb.Game();
+    game.init(false);
+    document.getElementById("easy").onclick=function () {
+        game.init(true,3);
+        document.getElementById("second").innerText="时间";
+    }
+    document.getElementById("hard").onclick=function () {
+        game.init(true,5);
+    }
+    document.getElementById("end").onclick=function () {
+        game.init(false);
+    }
+
+
+
+</script>
+</body>
+</html>
